@@ -137,59 +137,33 @@
 
         </div>
 
-        <form id="contactForm" class="php-email-form" data-aos="fade-up" data-aos-delay="600">
+        <form action="contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="600">
           <div class="row gy-4">
-        
+
             <div class="col-md-6">
-              <input type="text" id="name" class="form-control" placeholder="Your Name" required>
+              <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
             </div>
-        
-            <div class="col-md-6">
-              <input type="email" id="email" class="form-control" placeholder="Your Email" required>
+
+            <div class="col-md-6 ">
+              <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
             </div>
-        
+
             <div class="col-md-12">
-              <input type="text" id="subject" class="form-control" placeholder="Subject" required>
+              <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
             </div>
-        
+
             <div class="col-md-12">
-              <textarea id="message" class="form-control" rows="6" placeholder="Message" required></textarea>
+              <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
             </div>
-        
+
             <div class="col-md-12 text-center">
               <div class="loading">Loading</div>
               <div class="error-message"></div>
-              <div class="sent-message">Your message has been sent!</div>
-        
-              <button type="submit" class="save-button" onclick="saveToFile()">Send Message</button>
+              <div class="sent-message">Your message has been sent. Thank you!</div>
+
+              <button type="submit">Send Message</button>
             </div>
-        
-          </div>
-        </form>
-        
-        <script>
-          function saveToFile() {
-              let name = document.getElementById("name").value;
-              let email = document.getElementById("email").value;
-              let subject = document.getElementById("subject").value;
-              let message = document.getElementById("message").value;
-        
-              if (!name || !email || !subject || !message) {
-                  alert("Please fill in all fields!");
-                  return;
-              }
-        
-              let content = `Name: ${name}\nEmail: ${email}\nSubject: ${subject}\nMessage: ${message}\n--------------------\n`;
-        
-              let blob = new Blob([content], { type: "text/plain" });
-              let link = document.createElement("a");
-              link.href = URL.createObjectURL(blob);
-              link.download = "contact_data.txt";
-              link.click();
-        
-              alert("Your message has been sent!");
-          }
-        </script>
+
           </div>
         </form><!-- End Contact Form -->
 
@@ -222,7 +196,7 @@
   </footer>
 
   <!-- Scroll Top -->
-  <a href="https://github.com/SLAIMI" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Preloader -->
   <div id="preloader"></div>
